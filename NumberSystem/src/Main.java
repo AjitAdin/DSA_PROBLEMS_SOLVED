@@ -1,22 +1,41 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class Main{
+class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
 
-    public static void main(String args[]) {
-        Scanner scanner = new Scanner(System.in);
-        String s = scanner.nextLine();
-        int count1 = 0;
-        int count2 = 0;
+        int r=sc.nextInt();
+        int c=sc.nextInt();
 
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '*') {
-                count1++;
-            } else {
-                count2++;
+        int mat[][]=new int[r][c];
+
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                mat[i][j]=sc.nextInt();
             }
         }
-        int r=count1-count2;
-        System.out.println(r);
-    }
 
+
+        int max=0;
+        int row=0;
+        int count;
+
+        for(int i=0;i<r;i++){
+            count=0;
+            for(int j=0;j<c;j++){
+                if(mat[i][j]==1){
+
+                    count++;
+
+
+                }
+
+            }
+            if(max<count){
+                max=count;
+                row=i+1;
+            }
+        }
+        System.out.println(row);
+    }
 }
