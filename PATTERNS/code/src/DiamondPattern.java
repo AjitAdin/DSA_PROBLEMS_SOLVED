@@ -58,6 +58,8 @@ public class DiamondPattern {
                 System.out.print("*");
             }
 
+//
+
             System.out.println();
         }
     }
