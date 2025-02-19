@@ -46,3 +46,24 @@ class PushEmptyPacketstotheEndoftheArray {
 //        System.out.println("Array after removing zeros: " + Arrays.toString(temp));
 //    }
 //}
+
+
+//IMP METHOD
+//import java.util.*;
+//class Main {
+//    public static void main(String[] args) {
+//        int arr[]={2,0,3,0,5};
+//        int j=0;
+//        for(int i=0;i<arr.length;i++){
+//
+//
+//            if(arr[i]!=0){
+//                int t=arr[i];
+//                arr[i]=arr[j];
+//                arr[j]=t;
+//                j++;
+//            }
+//        }
+//        System.out.println(Arrays.toString(arr));
+//    }
+//}
