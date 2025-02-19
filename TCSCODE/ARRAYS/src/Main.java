@@ -1,30 +1,26 @@
 // Online Java Compiler
 // Use this editor to write, compile and run your Java code online
 
+import java.util.*;
 class Main {
     public static void main(String[] args) {
-        int[][] arr = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
-        };
-
-        int temp;
-        int n=arr.length;
-        for(int i=0;i<arr.length;i++){
-            for(int j=0;j<arr.length;j++){
-                temp=arr[i][j];
-                arr[i][j]=arr[i][n-1-j];
-                arr[i][n-1-j]=temp;
-            }
-        }
+        String arr[]={"chiru","ajit","manju","ajit","akash","punith","manju"};
+        String temp[]=new String[arr.length];
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(temp));
 
         for(int i=0;i<arr.length;i++){
-            for(int j=0;j<arr.length;j++){
-                System.out.println(arr[i][j]+ " ");
+
+            for(int j=0;j<i;j++){
+                if(arr[i].equals(temp[j])){
+
+                    continue;
+                }
+
             }
-            System.out.println();
+            temp[i]=arr[i];
         }
+        System.out.println(Arrays.toString(temp));
 
     }
 }
