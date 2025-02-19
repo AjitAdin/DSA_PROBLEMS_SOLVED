@@ -19,3 +19,14 @@ class SortArrayBasedonRiskLevels {
         System.out.println(Arrays.toString(arr));
     }
 }
+
+
+
+
+///best method
+
+
+//bubble sort
+
+
+//3rd method  Dutch National Flag Algorithm
