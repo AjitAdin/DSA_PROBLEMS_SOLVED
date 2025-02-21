@@ -62,7 +62,7 @@ class ThirdMaxNumber {
 //}
 
 
-//lly method'
+//lly method
 //import java.util.Arrays;
 //
 //public class ThirdMaxNumber {
