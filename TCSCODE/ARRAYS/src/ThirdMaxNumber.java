@@ -33,3 +33,33 @@ class ThirdMaxNumber {
 
 
 ///best methods
+//import java.util.*;
+//class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {2, 2, 3, 1};
+//        Arrays.sort(arr);
+//        int max=Integer.MAX_VALUE;
+//        System.out.println(Arrays.toString(arr));
+//
+//        int n=arr.length;
+//        int count =0;
+//
+//        for(int i=n-1;i>=0;i--){
+//
+//            if(arr[i]<max){
+//
+//                max=arr[i];
+//                count++;
+//            }
+//
+//            if(count==3){
+//                break;
+//            }
+//        }
+//        System.out.println(max);
+//
+//    }
+//}
+
+
+//lly method'
