@@ -63,3 +63,35 @@ class ThirdMaxNumber {
 
 
 //lly method'
+//import java.util.Arrays;
+//
+//public class ThirdMaxNumber {
+//    public static void main(String[] args) {
+//        int[] arr = {2, 2, 3, 1};
+//        System.out.println(Arrays.toString(arr));
+//        int result = findThirdMax(arr);
+//
+//        System.out.println("The third maximum number is: " + result);
+//    }
+//
+//    public static int findThirdMax(int[] nums) {
+//        Arrays.sort(nums);
+//        // System.out.println(Arrays.toString(nums));
+//        int uniqueCount = 1;
+//        int currentMax = nums[nums.length - 1];
+//
+//        for (int i = nums.length - 2; i >= 0; i--) {
+//            System.out.println(nums[i]);
+//            if (nums[i] != currentMax) {
+//                uniqueCount++;
+//                currentMax = nums[i];
+//            }
+//            if (uniqueCount == 3) {
+//                return currentMax;
+//            }
+//        }
+//
+//        // If there are fewer than 3 unique numbers, return the maximum number
+//        return nums[nums.length - 1];
+//    }
+//}
