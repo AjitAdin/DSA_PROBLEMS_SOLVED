@@ -24,4 +24,4 @@ public class UniqueNumberCount {
 }
 
 
-//mehtod 2
+//mehtod 2.
