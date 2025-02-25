@@ -24,3 +24,4 @@ public class UniqueNumberCount {
 }
 
 
+//mehtod 2
