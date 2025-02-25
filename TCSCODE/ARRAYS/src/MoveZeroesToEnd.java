@@ -20,7 +20,7 @@ class MoveZeroesToEnd {
 
 }
 
-//best method 2..
+//Best method 2.
 //import java.util.Arrays;
 //
 //class Main {
