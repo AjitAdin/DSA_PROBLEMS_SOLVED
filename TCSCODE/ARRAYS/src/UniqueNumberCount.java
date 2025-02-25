@@ -1,4 +1,4 @@
-public class UniqueNumberCount {
+ class UniqueNumberCount {
     public static void main(String[] args) {
         int arr[]={4,1,3,2,1,2,9};
         int n=arr.length;
