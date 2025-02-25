@@ -17,7 +17,7 @@ class CountofElementsGreaterThanAllPriorElements {
 }
 
 
-//BEST METHOD
+//BEST METHOD 2
 //public class CountGreaterElements {
 //    public static int countGreaterElements(int[] arr) {
 //        if (arr.length == 0) {
