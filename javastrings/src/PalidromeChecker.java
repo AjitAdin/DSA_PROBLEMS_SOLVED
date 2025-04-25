@@ -44,3 +44,43 @@ public class PalidromeChecker {
         System.out.println(obj1.isPalindromeUsingTwoPointers());
     }
 }
+
+
+// EASY METHODS 
+
+
+// class Main {
+//     public static void main(String args[]) {
+//         String str1 = "soos";
+//         String str2 = "ajit";
+        
+//         StringBuilder rev = new StringBuilder();
+        
+//         for (int i = str1.length() - 1; i >= 0; i--) {
+//             rev.append(str1.charAt(i));
+//         }
+//         System.out.println(rev);
+        
+//         if (str1.equals(rev.toString())) {
+//             System.out.println("true");
+//         } else {
+//             System.out.println("false");
+//         }
+//     }
+// }
+
+
+//2ND METHOD
+// class Main {
+//     public static void main(String args[]) {
+//         StringBuilder str1 = new StringBuilder("soos");
+        
+//         StringBuilder rev = new StringBuilder(str1).reverse();
+        
+//         if (str1.toString().equals(rev.toString())) {
+//             System.out.println("true");
+//         } else {
+//             System.out.println("false");
+//         }
+//     }
+// }
