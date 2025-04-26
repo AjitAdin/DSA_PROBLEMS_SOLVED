@@ -78,7 +78,7 @@ public class PositionOfSubStringWithinString {
 //
 //
 //
-//method 2
+
 //class Main {
 //    public static void main(String args[]) {
 //        String str = "takeuforword";
