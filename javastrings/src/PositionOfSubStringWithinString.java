@@ -78,4 +78,28 @@ public class PositionOfSubStringWithinString {
 //
 //
 //
-//ChatGPT can make mi
+//method 2
+//class Main {
+//    public static void main(String args[]) {
+//        String str = "takeuforword";
+//        String substr = "forword";
+//        int result = -1;
+//
+//        for (int i = 0; i <= str.length() - substr.length(); i++) {
+//            int index = 0;
+//            for (int j = i; j < i + substr.length(); j++) {
+//                if (str.charAt(j) == substr.charAt(index)) {
+//                    index++;
+//                } else {
+//                    break;
+//                }
+//            }
+//            if (index == substr.length()) {
+//                result = i;
+//                break; // Found the substring, no need to check further
+//            }
+//        }
+//
+//        System.out.println(result);
+//    }
+//}
