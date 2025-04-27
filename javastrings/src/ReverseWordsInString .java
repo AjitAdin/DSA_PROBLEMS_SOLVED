@@ -29,3 +29,32 @@ class ReverseWordsInString {
         obj.reverseString();
     }
 }
+
+
+
+
+//
+class Main {
+    
+  public static String rev(String s){
+       StringBuilder rev=new StringBuilder();
+       for(int i=0;i<s.length();i++){
+           rev.append(s.charAt(i));
+       }
+       return rev.reverse().toString();
+  }
+   
+    
+    public static void main(String[] args) {
+        String s="hello ajit how are you";
+        StringBuilder res=new StringBuilder();
+        String[] str=s.split(" ");
+        for(String st:str){
+            
+            String temp=rev(st);
+            res.append(temp);
+            
+        }
+        System.out.println(res.toString());
+    }
+}
