@@ -12,7 +12,7 @@ class Main {
         for (int i = words.length - 1; i >= 0; i--) {
             reverseString.append(words[i]);
 
-            // Add the space between words if not the last word
+           
             if (i != 0) {
                 reverseString.append(" ");
             }
@@ -25,7 +25,7 @@ class Main {
 class ReverseWordsInString {
     public static void main(String args[]) {
         String str = "hello ajit how are you";
-        Main obj = new Main(str); // You forgot to create the object
+        Main obj = new Main(str); 
         obj.reverseString();
     }
 }
