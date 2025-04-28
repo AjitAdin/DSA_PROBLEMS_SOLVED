@@ -58,3 +58,41 @@ public class WordWithHighestNumberOfRepeatedLettersInString {
         System.out.println(check(str2));
     }
 }
+
+
+//method 2
+// import java.util.*;
+
+// class Main {
+
+//     public static int maxLetterFrequency(String s) {
+//         int[] freq = new int[128]; // 128 is enough for basic ASCII
+//         int maxFreq = 0;
+        
+//         for (int i = 0; i < s.length(); i++) {
+//             char ch = s.charAt(i);
+//             freq[ch]++;
+//             if (freq[ch] > maxFreq) {
+//                 maxFreq = freq[ch];
+//             }
+//         }
+//         return maxFreq;
+//     }
+    
+//     public static void main(String args[]) {
+//         String s = "abcdefghij google microooosoft";
+//         String[] arr = s.trim().split("\\s+");
+//         int max = 0;
+//         String res = "";
+        
+//         for (String word : arr) {
+//             int count = maxLetterFrequency(word);
+//             if (count > max) {
+//                 max = count;
+//                 res = word;
+//             }
+//         }
+        
+//         System.out.println(res);
+//     }
+// }
