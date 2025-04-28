@@ -46,3 +46,19 @@ public class SortCharctersInString{
         Bubblesort(str);
     }
 }
+
+
+
+
+
+//build in methods
+// import java.util.*;
+
+// class Main {
+//     public static void main(String args[]) {
+//         String s = "badc";
+//         char[] chararr = s.toCharArray();
+//         Arrays.sort(chararr);
+//         System.out.println(new String(chararr));  // Just print the sorted string
+//     }
+// }
