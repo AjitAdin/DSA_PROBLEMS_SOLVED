@@ -36,7 +36,8 @@ public class selectionsort {
 }
 
 
-//method 2
+//method 3 not correct bc it not swaps it just shifts like sliding wondow
+
 // import java.util.*;
 // class Sort{
     
