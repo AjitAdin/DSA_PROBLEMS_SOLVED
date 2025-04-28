@@ -36,6 +36,40 @@ public class selectionsort {
 }
 
 
+//method 2  very imp (trick)
+// public class selectionsort {
+
+//     static void sort(int arr[], int n) {
+//         for (int i = 0; i < n - 1; i++) {
+//             int index = i;
+
+//             for (int j = i + 1; j < n; j++) {
+//                 if (arr[j] < arr[index]) {
+//                     index = j;
+//                 }
+//             }
+
+//             // Swap arr[i] and arr[index]
+//             int temp = arr[i];
+//             arr[i] = arr[index];
+//             arr[index] = temp;
+//         }
+
+//         // Printing the sorted array
+//         for (int i = 0; i < n; i++) {
+//             System.out.println(arr[i]);
+//         }
+//     }
+
+//     public static void main(String[] args) {
+//         int arr[] = {7, 4, 10, 8, 3, 1};
+//         int n = arr.length;
+//         sort(arr, n);
+//     }
+// }
+
+
+
 //method 3 not correct bc it not swaps it just shifts like sliding wondow
 
 // import java.util.*;
