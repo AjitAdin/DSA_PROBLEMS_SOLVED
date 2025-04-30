@@ -79,3 +79,29 @@ public class RemoveEleFromNth {
         list.printList();
     }
 }
+
+
+//BEST METHOD
+//public Node removeNthNode(int n) {
+//    if(head==null || n<=0) return head;
+//
+//    if(n==1){
+//        head=head.next;
+//        return head;
+//    }
+//
+//    Node temp=head;
+//    for(int i=1;temp!=null && i<n-1;i++){
+//        temp=temp.next;
+//    }
+//
+//    if(temp==null||temp.next==null){
+//        return head;
+//    }
+//
+//    //remove the nth node
+//    temp.next=temp.next.next;
+//
+//    return head;
+//
+//}
