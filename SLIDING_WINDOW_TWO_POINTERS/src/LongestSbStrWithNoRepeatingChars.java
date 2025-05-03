@@ -43,8 +43,6 @@ class LongestSbStrWithNoRepeatingChars {
 //            }
 //            seen.add(s.charAt(right));
 //            maxLen = Math.max(maxLen, right - left + 1);
-//        }
-//
 //        return maxLen;
 //    }
 //
