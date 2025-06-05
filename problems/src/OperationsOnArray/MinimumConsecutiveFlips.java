@@ -2,6 +2,14 @@ package OperationsOnArray;
 //Minimum Consecutive Flips
 //the main logic is we have to flip the element which is second because 1,0 in this 0 and 
 //1,0,1,0,1 in this 0 because we have to put vice versa number 
+
+// If the array starts with 0, then we flip all groups of 1s.
+
+// If the array starts with 1, then we **flip all groups of 0s`.
+
+// Why does this minimize flips? Because each time the element changes, a new group starts. So the total number of groups is determined by transitions between 0 and 1. The smaller group will always be the one not starting the array, and that's the one we flip.
+
+
 public class MinimumConsecutiveFlips {
 	
 		
