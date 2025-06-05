@@ -55,3 +55,34 @@ public class FrequencyInSortedArray {
 	}
 
 }
+
+
+
+// import java.util.HashMap; // Import the HashMap class
+
+// public class Main {
+//     public static void main(String[] args) {
+//         // Declare and initialize an array
+//         int[] numbers = {0, 1, 1, 2, 2, 3, 4, 6, 6};
+
+//         // Create a HashMap to store frequency of each number
+//         HashMap<Integer, Integer> frequencyMap = new HashMap<>();
+
+//         // Loop through each number in the array
+//         for (int number : numbers) {
+//             // Check if the number already exists in the map
+//             // If yes, increment the count by 1
+//             // If no, add the number with count 1
+//             int count = frequencyMap.getOrDefault(number, 0);
+//             frequencyMap.put(number, count + 1);
+//         }
+
+//         // Print out the frequencies
+//         System.out.println("Frequencies of elements:");
+//         for (int key : frequencyMap.keySet()) {
+//             int value = frequencyMap.get(key);
+//             System.out.println("Frequency of " + key + " is: " + value);
+//         }
+//     }
+// }
+
