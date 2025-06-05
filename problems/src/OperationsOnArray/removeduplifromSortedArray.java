@@ -95,3 +95,64 @@ public class removeduplifromSortedArray {
 //
 //}
 
+
+
+
+// FOR UNSORTED ARRAY
+
+
+import java.util.*;
+
+class Solution{
+    public int removeDuplicates(int arr[]){
+        
+        Set<Integer> freq = new LinkedHashSet<>();
+        
+        for(int i:arr){
+            freq.add(i);
+        }
+        int index=0;
+        for(int n:freq){
+            arr[index++]=n;
+        }
+        return index;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        int[] nums = {4, 5, 2, 4, 3, 5, 1};
+
+        int k = sol.removeDuplicates(nums);
+
+        System.out.println("Number of unique elements: " + k);
+        System.out.print("Array after removing duplicates: ");
+        for (int i = 0; i < k; i++) {
+            System.out.print(nums[i] + " ");
+        }
+    }
+}
+
+
+
+
+//
+import java.util.HashSet;
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        HashSet<Integer> seen = new HashSet<>();
+        int k = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (!seen.contains(nums[i])) {
+                seen.add(nums[i]);
+                nums[k] = nums[i];
+                k++;
+            }
+        }
+
+        return k;
+    }
+}
