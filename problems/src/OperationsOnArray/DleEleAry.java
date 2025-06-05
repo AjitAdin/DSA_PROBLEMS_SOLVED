@@ -50,7 +50,7 @@ public class DleEleAry {
 
 
 
-///// JAVA Code for Find Second largest
+///// JAVA Code for Find Second largest see gfg practice
 //// element in an array
 //class GFG {
 //
