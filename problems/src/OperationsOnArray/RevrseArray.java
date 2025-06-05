@@ -35,4 +35,44 @@ public class RevrseArray {
 	}
 	   
 }
-   
+
+
+// two pointer approach
+package OperationsOnArray;
+
+public class ReverseArray {
+    
+    static void Reverse(int arr[], int n) {
+        int i = 0, j = n - 1;
+        
+        while (i < j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+
+        System.out.println("\nThe Array after reversing:");
+        for (int k = 0; k < n; k++) {
+            System.out.print(arr[k]);
+            if (k < n - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+    }
+    
+    public static void main(String args[]) {
+        int arr[] = {1, 2, 3, 4, 5}, n = 5;
+        System.out.print("The Array before reversing: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i]);
+            if (i < n - 1) {
+                System.out.print(", ");
+            }
+        }
+        Reverse(arr, n);
+    }
+}
+
