@@ -1,3 +1,49 @@
+
+
+
+// public class FrequencyCount {
+//     public static int[] countFrequency(int[] arr, int N, int P) {
+//         int[] freq = new int[N];  // frequency array for elements 1 to N
+
+//         for (int num : arr) {
+//             if (num >= 1 && num <= N && num <= P) {
+//                 freq[num - 1]++;
+//             }
+//         }
+
+//         return freq;
+//     }
+
+//     public static void main(String[] args) {
+//         int[] arr = {2, 3, 2, 5, 7, 1, 2, 10, 0};
+//         int N = 7;
+//         int P = 7;
+
+//         int[] frequency = countFrequency(arr, N, P);
+
+//         System.out.println("Frequency of elements from 1 to " + N + ":");
+//         for (int i = 0; i < N; i++) {
+//             System.out.println((i + 1) + " -> " + frequency[i]);
+//         }
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 package OperationsOnArray;
 //FREQUENCY OF LIMITED RANGE ARRAY
 import java.util.*;
