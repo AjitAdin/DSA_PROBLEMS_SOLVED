@@ -56,7 +56,7 @@ public class MinimumConsecutiveFlips {
 	}
 	}
 
-//similar approach
+//similar approach very imp    imp imp
 //class Main {
 //
 //    static void a(int arr[], int n) {
