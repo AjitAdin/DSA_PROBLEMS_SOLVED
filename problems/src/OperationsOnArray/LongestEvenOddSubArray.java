@@ -66,34 +66,35 @@ public class LongestEvenOddSubArray {
 
 
 //EFFICIENT ALGORITHM
-//class Main{
-//    
-//    
-//    static void meth(int arr[],int n){
-//        int pre=0;
-//        int count;
-//       
-//            count = 1;
-//            for (int j = 0; j < n - 1; j++) {
-//                if ((arr[j] % 2 == 0 && arr[j + 1] % 2 != 0) || (arr[j] % 2 != 0 && arr[j + 1] % 2 == 0)) {
-//                    count++;
-//                } else {
-//                    count=1;
-//                }
-//                if (pre < count) {
-//                pre = count;
-//            }
-//            }
-//            
-//        
-//        System.out.println(pre);
-//    }
-//    
-//    public static void main(String args[]){
-//       // int arr[]={10,12,12,14,7,8,6,14,7,8,9};
-//       // int arr[]={1,2,3,4,5,6,8,9};
-//       int arr[]={10,12,8,4};
-//       int n=arr.length;
-//        meth(arr,n);
-//    }
-//}
+import java.util.*;
+
+public class LongestEvenOddSubArray {
+
+    static void findLongestEvenOddSubarray(int arr[], int n) {
+        if (n == 0) {
+            System.out.println(0);
+            return;
+        }
+
+        int maxLength = 1;
+        int currentLength = 1;
+
+        for (int i = 1; i < n; i++) {
+            if ((arr[i] % 2 == 0 && arr[i - 1] % 2 != 0) || 
+                (arr[i] % 2 != 0 && arr[i - 1] % 2 == 0)) {
+                currentLength++;
+                maxLength = Math.max(maxLength, currentLength);
+            } else {
+                currentLength = 1; // Reset the current length
+            }
+        }
+
+        System.out.println("Length of longest alternating even-odd subarray: " + maxLength);
+    }
+
+    public static void main(String args[]) {
+        int arr[] = {10, 12, 12, 14, 7, 8, 6, 14, 7, 8, 9};
+        int n = arr.length;
+        findLongestEvenOddSubarray(arr, n);
+    }
+}
