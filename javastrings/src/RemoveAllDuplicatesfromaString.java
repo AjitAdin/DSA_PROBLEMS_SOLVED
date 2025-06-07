@@ -93,3 +93,26 @@ public class RemoveAllDuplicatesfromaString{
 // }
 
 
+
+//linked hashset
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        String str = "sinstriiintng";
+        
+        Set<Character> hs = new LinkedHashSet<>();
+        for (int i = 0; i < str.length(); i++) {
+            hs.add(str.charAt(i));
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (char c : hs) {
+            sb.append(c);
+        }
+
+        System.out.println("Result: " + sb.toString());
+    }
+}
+
+
