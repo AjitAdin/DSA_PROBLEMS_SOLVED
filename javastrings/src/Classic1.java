@@ -65,3 +65,38 @@ public class SubstringSearch {
         System.out.println(result);
     }
 }
+
+
+//m3 
+public class SubstringCheck {
+
+    public static boolean isSubstring(String str, String substr) {
+        int n = str.length();
+        int m = substr.length();
+
+        // Slide through str
+        for (int i = 0; i <= n - m; i++) {
+            int j;
+            for (j = 0; j < m; j++) {
+                if (str.charAt(i + j) != substr.charAt(j)) {
+                    break; 
+                }
+            }
+            // If j reached the end of substr, match found
+            if (j == m) return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        String str = "takeuforword";
+        String substr = "forword";
+
+        if (isSubstring(str, substr)) {
+            System.out.println("Substring found!");
+        } else {
+            System.out.println("Substring not found.");
+        }
+    }
+}
+
