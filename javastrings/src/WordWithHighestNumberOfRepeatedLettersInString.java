@@ -61,38 +61,46 @@ public class WordWithHighestNumberOfRepeatedLettersInString {
 
 
 //method 2
-// import java.util.*;
+import java.util.*;
 
-// class Main {
+class Main {
 
-//     public static int maxLetterFrequency(String s) {
-//         int[] freq = new int[128]; // 128 is enough for basic ASCII
-//         int maxFreq = 0;
-        
-//         for (int i = 0; i < s.length(); i++) {
-//             char ch = s.charAt(i);
-//             freq[ch]++;
-//             if (freq[ch] > maxFreq) {
-//                 maxFreq = freq[ch];
-//             }
-//         }
-//         return maxFreq;
-//     }
-    
-//     public static void main(String args[]) {
-//         String s = "abcdefghij google microooosoft";
-//         String[] arr = s.trim().split("\\s+");
-//         int max = 0;
-//         String res = "";
-        
-//         for (String word : arr) {
-//             int count = maxLetterFrequency(word);
-//             if (count > max) {
-//                 max = count;
-//                 res = word;
-//             }
-//         }
-        
-//         System.out.println(res);
-//     }
-// }
+    // Returns the number of distinct repeated letters in a word
+    public static int countRepeatedLetters(String word) {
+        int[] freq = new int[256];
+        int repeatedCount = 0;
+        word = word.toLowerCase();
+
+        for (char c : word.toCharArray()) {
+            if (Character.isLetter(c)) {
+                freq[c]++;
+            }
+        }
+
+        for (int count : freq) {
+            if (count > 1) {
+                repeatedCount++;
+            }
+        }
+
+        return repeatedCount;
+    }
+
+    public static void main(String[] args) {
+        String str = "abcdefghij google microsoft";
+        String[] words = str.split("\\s+");
+
+        int maxRepeated = 0;
+        String result = "-1";
+
+        for (String word : words) {
+            int repeated = countRepeatedLetters(word);
+            if (repeated > maxRepeated) {
+                maxRepeated = repeated;
+                result = word;
+            }
+        }
+
+        System.out.println(result);
+    }
+}
