@@ -1,3 +1,46 @@
+import java.util.Scanner;
+
+public class LongestWordLength {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt user input
+        System.out.print("Enter a sentence: ");
+        String input = scanner.nextLine();
+
+        // Split the string by spaces (handle multiple spaces)
+        String[] words = input.trim().split("\\s+");
+
+        int maxLength = 0;
+
+        for (String word : words) {
+            // Optional: Remove punctuation if needed
+            word = word.replaceAll("[^a-zA-Z]", "");
+
+            if (word.length() > maxLength) {
+                maxLength = word.length();
+            }
+        }
+
+        System.out.println("Length of the longest word: " + maxLength);
+
+        scanner.close();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public class LargestWordInString {
 
     public static String largestWord(String str) {
