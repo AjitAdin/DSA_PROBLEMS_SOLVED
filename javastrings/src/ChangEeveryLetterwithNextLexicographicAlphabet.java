@@ -47,3 +47,46 @@ public class ChangEeveryLetterwithNextLexicographicAlphabet {
     }
 
 }
+
+
+
+
+// logic
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        String str = "abcdxyzABCXYZ0123456789"; // Example input with lowercase, uppercase, and digits
+        
+        // Convert string to a character array
+        char[] arr = str.toCharArray();
+  
+        // Print the original character array
+        System.out.println(Arrays.toString(arr));
+        
+        // Loop through the character array to modify each character
+        for (int i = 0; i < arr.length; i++) {
+            char chr = arr[i];
+            
+            if (Character.isLowerCase(chr)) { // If the character is a lowercase letter
+                int index = chr - 'a'; // Get the index relative to 'a'
+                arr[i] = (char) ((index + 1) % 26 + 'a'); // Shift and wrap around if necessary
+            } 
+            else if (Character.isUpperCase(chr)) { // If the character is an uppercase letter
+                int index = chr - 'A'; // Get the index relative to 'A'
+                arr[i] = (char) ((index + 1) % 26 + 'A'); // Shift and wrap around if necessary
+            }
+            else if (Character.isDigit(chr)) { // If the character is a digit
+                arr[i] = (char) ((chr - '0' + 1) % 10 + '0'); // Shift and wrap around from '9' to '0'
+            }
+        }
+        
+        // Print the modified character array
+        System.out.println(Arrays.toString(arr));
+        System.out.println(new String(arr));
+    }
+}
+
+
+
