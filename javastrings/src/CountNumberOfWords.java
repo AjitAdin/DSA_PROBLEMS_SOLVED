@@ -1,23 +1,19 @@
-public class CountNumberOfWords {
+class CountNumberOfWords {
+    public static void main(String[] args) {
+        String s = "                    HI    AMRMY  AND DEFENSE    hello";
+        s = s.trim();
 
+        if (s.isEmpty()) {
+            System.out.println(0);
+            return;
+        }
 
-    public static int count(String str){
-
-       int count=0;
-       String[] words=str.split(" ");
-       for(String word:words){
-
-           count++;
-
-       }
-       return count;
-    }
-
-    public static void main(String args[]){
-        String str="HI AMRMY AND DEFENSE";
-        System.out.println(count(str));
+        String[] words = s.split("\\s+"); // split by one or more spaces
+        System.out.println(String.join(" ", words)); // optional: print cleaned version
+        System.out.println(words.length);
     }
 }
+
 
 
 //  very very imp pattern 
