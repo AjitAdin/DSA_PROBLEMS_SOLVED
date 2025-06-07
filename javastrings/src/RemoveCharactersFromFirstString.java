@@ -44,3 +44,30 @@ public class RemoveCharactersFromFirstString{
         Remove(str1,str2);
     }
 }
+
+
+
+// O(m+n)
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        String s1 = "abcdef";
+        String s2 = "czeffz";
+
+        Set<Character> charsToRemove = new HashSet<>();
+        for (char c : s2.toCharArray()) {
+            charsToRemove.add(c);
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (char c : s1.toCharArray()) {
+            if (!charsToRemove.contains(c)) {
+                sb.append(c);
+            }
+        }
+
+        System.out.println(sb.toString());
+    }
+}
