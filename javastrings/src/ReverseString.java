@@ -13,3 +13,10 @@ public class ReverseString {
         reverse(s);
     }
 }
+
+
+| Approach                             | Time Complexity | Space Complexity | Notes                                |
+| ------------------------------------ | --------------- | ---------------- | ------------------------------------ |
+| Using `StringBuilder.append` in loop | O(n)            | O(n)             | Slight overhead in append operations |
+| Using `StringBuilder.reverse()`      | O(n)            | O(n)             | Cleaner, same complexity             |
+| Using in-place array reversal        | O(n)            | O(n)             | Most direct and minimal overhead     |
