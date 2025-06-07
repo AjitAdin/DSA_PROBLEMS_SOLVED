@@ -84,3 +84,28 @@ public class PalidromeChecker {
 //         }
 //     }
 // }
+
+
+
+// imp
+public class StringCompareExample {
+    public static void main(String[] args) {
+        String str = "Madam";
+        str = str.replaceAll("[^A-Za-z0-9]", "").toLowerCase();
+        
+        if (isPalindrome(str)) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not a Palindrome");
+        }
+    }
+    
+    public static boolean isPalindrome(String str) {
+        int l = 0, r = str.length() - 1;
+        while (l < r) {
+            if (str.charAt(l) != str.charAt(r)) return false;
+            l++; r--;
+        }
+        return true;
+    }
+}
