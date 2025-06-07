@@ -1,38 +1,47 @@
-public class CountnumberofvowelsconsonantsspacesinString{
+public class CountNumberOfVowelsConsonantsSpacesInString {
 
+    public static void count(String str) {
+        int vowels = 0, consonants = 0, whitespace = 0;
 
+        // Loop through the string and check each character
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            c = Character.toLowerCase(c);  // Convert character to lowercase for uniformity
 
-    public static void Count(String str){
-        int vowels=0, consonants=0,whitespace=0;
-        for(int i=0;i<str.length();i++){
-
-
-            if(str.charAt(i)=='a'||str.charAt(i)=='e'||str.charAt(i)=='i'||str.charAt(i)=='o'|| str.charAt(i)=='u'){
-                //  System.out.println(str.charAt(i));
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
                 vowels++;
-            }
-            else if(str.charAt(i)==' '){
+            } else if (c == ' ') {
                 whitespace++;
-            }
-            else{
+            } else if (Character.isLetter(c)) {
                 consonants++;
             }
         }
-        System.out.println(vowels);
-        System.out.println(consonants);
-        System.out.println(whitespace);
 
+        System.out.println("Vowels: " + vowels);
+        System.out.println("Consonants: " + consonants);
+        System.out.println("Whitespaces: " + whitespace);
     }
 
-    public static void main(String args[]){
-        String str="Take u forward is Awesome";
-        str=str.toLowerCase();
-        Count(str);
+    public static void main(String args[]) {
+        String str = "Take u forward is Awesome";
+        count(str);  // No need to convert string to lowercase here, it's handled inside the count function
     }
+}
 
 
 
 
+// 2nd imp
+for (int i = 0; i < str.length(); i++) {
+    char c = str.charAt(i);
+    
+    if ("aeiou".indexOf(c) != -1) {
+        vowels++;
+    } else if (Character.isLetter(c)) {
+        consonants++;
+    } else if (Character.isWhitespace(c)) {
+        whitespaces++;
+    }
 }
 
 //Count number of vowels, consonants, spaces in String
