@@ -63,3 +63,52 @@ public class MaximumOccuringCharcter {
 //         Check(str);
 //     }
 // }
+
+
+// tc=	O(n + k) (usually O(n)) sc=O(n)
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        
+        String str = "aabcdddeee";
+        
+        // Convert the string to lowercase to handle case insensitivity
+        str = str.toLowerCase();
+        
+        // Initialize the map to count occurrences of each character
+        HashMap<Character, Integer> mp = new HashMap<>();
+        
+        // Loop through each character in the string
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            
+            // Ignore non-letter characters (optional)
+            if (!Character.isLetter(c)) {
+                continue;  // Skip non-letter characters
+            }
+            
+            // Update the frequency of the character
+            int count = mp.getOrDefault(c, 0);
+            mp.put(c, count + 1);
+        }
+        
+        // Variables to track the character with the highest frequency
+        int max = 0;
+        char charval = '\0';  // Initialize to a default value
+        
+        // Iterate through the map to find the character with the highest frequency
+        for (char key : mp.keySet()) {
+            if (mp.get(key) > max) {
+                max = mp.get(key);
+                charval = key;
+            }
+        }
+        
+        // Output the character with the highest frequency
+        System.out.println(charval);
+    }
+}
+
+
+
