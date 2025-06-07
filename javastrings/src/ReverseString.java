@@ -15,6 +15,34 @@ public class ReverseString {
 }
 
 
+
+
+public class Main {
+    public static String reverseString(String s) {
+        char[] arr = s.toCharArray();
+        int left = 0, right = arr.length - 1;
+
+        while (left < right) {
+            // Swap characters
+            char temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+
+            left++;
+            right--;
+        }
+
+        return new String(arr);
+    }
+
+    public static void main(String[] args) {
+        String s = "ajit";
+        System.out.println(reverseString(s));  // Output: tija
+    }
+}
+
+
+
 | Approach                             | Time Complexity | Space Complexity | Notes                                |
 | ------------------------------------ | --------------- | ---------------- | ------------------------------------ |
 | Using `StringBuilder.append` in loop | O(n)            | O(n)             | Slight overhead in append operations |
