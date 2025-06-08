@@ -28,3 +28,37 @@ public class MaximumSumSubArray {
 }
 
 // BETTER APPROACH
+//public class MaxSubarraySum {
+//    public static int maxSumSubarray(int[] nums, int k) {
+//        if (nums == null || nums.length < k || k <= 0) {
+//            throw new IllegalArgumentException("Invalid input");
+//        }
+//
+//        int maxSum = Integer.MIN_VALUE;  // To store the maximum sum found
+//        int windowSum = 0;  // To keep track of the current sum of the window
+//        int l = 0;  // Left pointer
+//
+//        // Iterate through the array using the right pointer
+//        for (int r = 0; r < nums.length; r++) {
+//            windowSum += nums[r];  // Add the current element to the window sum
+//
+//            // When the window size reaches k, calculate the sum
+//            if (r - l + 1 == k) {
+//                // Update the max sum if the current window sum is larger
+//                maxSum = Math.max(maxSum, windowSum);
+//
+//                // Move the left pointer to shrink the window
+//                windowSum -= nums[l];
+//                l++;  // Shrink the window from the left
+//            }
+//        }
+//
+//        return maxSum;
+//    }
+//
+//    public static void main(String[] args) {
+//        int[] nums = {-1, 2, 3, 3, 4, 5, -1};
+//        int k = 4;
+//        System.out.println("Max sum of subarray of size " + k + ": " + maxSumSubarray(nums, k));
+//    }
+//}
