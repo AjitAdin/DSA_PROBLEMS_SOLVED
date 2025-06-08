@@ -65,3 +65,34 @@ class LongestSubarraySum {
         System.out.println(maxlength);
     }
 }
+
+
+//BRUTE FORCE APPROACH
+//import java.util.*;
+//
+//class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {2,5,1,7,10};
+//        int sum=14; //sum<=14
+//        int n = arr.length;
+//        int max=Integer.MIN_VALUE;
+//        int maxlength=0;
+//        for(int i=0;i<n;i++){
+//            int currsum=0;
+//            int currlength=0;
+//            for(int j=i;j<n;j++){
+//                currsum+=arr[j];
+//                if(currsum<=sum){
+//                    max=Math.max(max,currsum);
+//                    currlength++;
+//                    maxlength=Math.max(maxlength,currlength);
+//                }
+//            }
+//        }
+//        System.out.println("length : "+ maxlength+ " SUM: "+ max);
+//
+//
+//
+//
+//    }
+//}
