@@ -27,7 +27,7 @@
 //    }
 //}
 
-
+//optimal but wrong for some cases check it
 import java.util.*;
 public class FruitIntoBasket {
 
@@ -59,3 +59,34 @@ public class FruitIntoBasket {
 
     }
 }
+
+
+//more optimal and correct
+//import java.util.HashMap;
+//
+//class Solution {
+//    public int totalFruit(int[] fruits) {
+//        int n = fruits.length;
+//        int l = 0, maxlength = 0;
+//
+//        // map to count frequencies of fruit types in the window
+//        HashMap<Integer, Integer> map = new HashMap<>();
+//
+//        for (int r = 0; r < n; r++) {
+//            map.put(fruits[r], map.getOrDefault(fruits[r], 0) + 1);
+//
+//            // shrink the window until we have only two types
+//            while (map.size() > 2) {
+//                map.put(fruits[l], map.get(fruits[l]) - 1);
+//                if (map.get(fruits[l]) == 0) {
+//                    map.remove(fruits[l]);
+//                }
+//                l++;
+//            }
+//
+//            maxlength = Math.max(maxlength, r - l + 1);
+//        }
+//
+//        return maxlength;
+//    }
+//}
