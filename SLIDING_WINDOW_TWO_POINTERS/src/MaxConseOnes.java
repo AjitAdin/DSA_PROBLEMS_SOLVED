@@ -1,3 +1,5 @@
+
+// LEETCODE 485 WITHOUT FLIPS
 public class MaxConseOnes {
 
     public int findMaxConsecutiveOnes(int[] nums) {
@@ -58,6 +60,79 @@ class Solution {
         }
 
         return maxlen;
+    }
+}
+
+// LEETCODE 1004 WITH FLIPS
+//  two pointer and  sliding window  approach   
+
+public class Solution {
+
+    // Brute-force method to find the longest subarray with at most k zero flips
+    public int longestOnes(int[] nums, int k) {
+        int maxLen = 0;
+        int n = nums.length;
+
+       
+       int l=0,r=0;
+       int flips=0;
+       
+       while(r<n){
+           
+           if(nums[r]==0){
+               flips++;
+           }
+        //   System.out.println(flips);
+           
+           while(flips>k){
+               if(nums[l]==0){
+                   flips--;
+               }
+               l++;
+           }
+           
+           maxLen=Math.max(maxLen,r-l+1);
+           
+           
+           r++;
+       }
+
+        return maxLen;
+    }
+
+    // Main method with test cases
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+
+        // Test Case 1
+        int[] arr1 = {1, 1, 1, 0, 0, 1, 1, 1, 0, 1};
+        int k1 = 2;
+        System.out.println("Test 1 Output: " + sol.longestOnes(arr1, k1)); // Expected: 8
+
+        // Test Case 2
+        int[] arr2 = {0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1};
+        int k2 = 3;
+        System.out.println("Test 2 Output: " + sol.longestOnes(arr2, k2)); // Expected: 10
+
+        // Test Case 3
+        int[] arr3 = {1, 0, 1, 0, 1, 0, 1};
+        int k3 = 1;
+        System.out.println("Test 3 Output: " + sol.longestOnes(arr3, k3)); // Expected: 3
+
+        // Test Case 4 - All 1s
+        int[] arr4 = {1, 1, 1, 1};
+        int k4 = 2;
+        System.out.println("Test 4 Output: " + sol.longestOnes(arr4, k4)); // Expected: 4
+
+        // Test Case 5 - All 0s
+        int[] arr5 = {0, 0, 0, 0};
+        int k5 = 2;
+        System.out.println("Test 5 Output: " + sol.longestOnes(arr5, k5)); // Expected: 2
+
+        // Test Case 6 - No flips allowed
+        int[] arr6 = {1, 0, 1, 0, 1};
+        int k6 = 0;
+        System.out.println("Test 6 Output: " + sol.longestOnes(arr6, k6)); // Expected: 1
     }
 }
 
