@@ -1,3 +1,13 @@
+Feature	MaximumSumSubArray class	Solution class (maximumSubarraySum)
+Problem type	Max sum of subarray of size k	Max sum of subarray of size k with distinct elements
+Allows duplicates in subarray?	✅ Yes	❌ No
+Uses HashSet?	❌ No	✅ Yes (to track uniqueness)
+Related LeetCode problem	Closest to LeetCode #643	✅ LeetCode #2461
+Complexity	O(n)	O(n) but with HashSet operations
+
+
+
+
 public class MaximumSumSubArray {
 
     public static int maxSumSubarray(int[] nums, int k) {
