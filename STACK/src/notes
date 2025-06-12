@@ -1,0 +1,136 @@
+Great question! The **monotonic stack** pattern appears frequently in interviews, especially when solving array-based problems that require optimizing brute-force comparisons. Below are **some popular and commonly asked application questions** of monotonic stacks, along with the pattern they use:
+
+---
+
+## ✅ **1. Daily Temperatures**
+
+**Leetcode 739**
+
+> Return the number of days until a warmer temperature. If none, return 0.
+
+* **Pattern**: Next Greater Element to the Right (but return distance instead of value)
+* **Traverse**: Right → Left
+* **Stack**: Monotonic Decreasing (stores **indices**, not values)
+
+---
+
+## ✅ **2. Next Greater Element I / II**
+
+**Leetcode 496 & 503**
+
+> For a circular or non-circular array, find the next greater element for each item.
+
+* **Pattern**: Next Greater Element to the Right
+* **Traverse**: Right → Left (and wrap around for circular version)
+* **Stack**: Monotonic Decreasing
+
+---
+
+## ✅ **3. Largest Rectangle in Histogram**
+
+**Leetcode 84**
+
+> Given heights of bars, find the largest rectangular area in the histogram.
+
+* **Pattern**: Next Smaller Element to Left and Right
+* **Use**: Find the width by computing boundaries to left/right
+* **Stack**: Monotonic Increasing
+* **Optimization**: One-pass version also possible
+
+---
+
+## ✅ **4. Trapping Rain Water**
+
+**Leetcode 42**
+
+> Given elevation heights, compute how much water can be trapped.
+
+* **Pattern**: Variant using stack to store **indices**
+* **Stack**: Monotonic Decreasing
+* **Trick**: Water is trapped between bars, calculate when height increases
+
+---
+
+## ✅ **5. Stock Span Problem**
+
+**GeeksforGeeks Classic / Leetcode Variant**
+
+> For each day, how many consecutive days before it had a lower or equal price?
+
+* **Pattern**: Previous Greater Element (to the left)
+* **Traverse**: Left → Right
+* **Stack**: Monotonic Decreasing (based on stock prices)
+
+---
+
+## ✅ **6. Remove K Digits**
+
+**Leetcode 402**
+
+> Remove `k` digits to get the smallest possible number.
+
+* **Pattern**: Monotonic Increasing Stack
+* **Goal**: Maintain ascending order, pop when digits violate the rule
+* **Stack**: Stores characters/digits
+
+---
+
+## ✅ **7. Asteroid Collision**
+
+**Leetcode 735**
+
+> Simulate collisions of asteroids moving in different directions.
+
+* **Pattern**: Monotonic Stack (with custom collision rules)
+* **Stack**: Custom logic, not strictly increasing/decreasing
+* **Pop**: When a left-moving asteroid meets a smaller right-moving one
+
+---
+
+## ✅ **8. Sum of Subarray Minimums**
+
+**Leetcode 907**
+
+> Sum the minimum value of all subarrays.
+
+* **Pattern**: Next Smaller Element (Left & Right)
+* **Trick**: Count how many subarrays each element is minimum in
+* **Stack**: Monotonic Increasing
+
+---
+
+## ✅ **9. Maximum of Minimum for Every Window Size**
+
+> For every window size, find the maximum among minimums.
+
+* **Pattern**: Compute spans using NSE to left and right
+* **Stack**: Monotonic Increasing
+* **Used In**: Optimization of sliding window problems
+
+---
+
+## ✅ **10. Minimum Add to Make Parentheses Valid**
+
+**Leetcode 921**
+
+> Count how many parentheses you need to add to make the string valid.
+
+* **Pattern**: Stack matching open/close parentheses
+* **Not strictly monotonic**, but uses similar push-pop balancing
+
+---
+
+## 🔁 Summary of Stack Uses in These Problems:
+
+| Problem             | Stack Maintains        | Stack Order  | Traverse | Stores      |
+| ------------------- | ---------------------- | ------------ | -------- | ----------- |
+| Daily Temperatures  | Next greater temp      | Decreasing   | R → L    | Indices     |
+| Histogram Max Area  | Next smaller heights   | Increasing   | L → R    | Indices     |
+| Trapping Rain Water | Lower walls            | Decreasing   | L → R    | Indices     |
+| Stock Span          | Previous greater price | Decreasing   | L → R    | Indices     |
+| Remove K Digits     | Smallest number        | Increasing   | L → R    | Digits      |
+| Asteroid Collision  | Collision candidates   | Custom order | L → R    | Sizes/signs |
+
+---
+
+Would you like a deep dive or code walkthrough for any specific one of these? I can also help compare them to find patterns in interviews.
