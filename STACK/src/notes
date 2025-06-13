@@ -134,3 +134,53 @@ Great question! The **monotonic stack** pattern appears frequently in interviews
 ---
 
 Would you like a deep dive or code walkthrough for any specific one of these? I can also help compare them to find patterns in interviews.
+
+
+
+Here’s a list of **similar problems** to **Daily Temperatures** that involve the **Monotonic Stack pattern**—usually for **next greater/smaller element**, or span problems. These are popular in interviews and coding platforms like LeetCode, Codeforces, and HackerRank.
+
+---
+
+### 🔥 **Next Greater / Smaller Element Problems**
+
+| Problem Name                                                                                                            | Type            | Description                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------- | --------------- | --------------------------------------------------------------------------------------- |
+| **Next Greater Element I** ([LeetCode 496](https://leetcode.com/problems/next-greater-element-i/))                      | Next Greater    | Given two arrays, find next greater element of elements in first array from the second. |
+| **Next Greater Element II** ([LeetCode 503](https://leetcode.com/problems/next-greater-element-ii/))                    | Circular Array  | Like the above but circular; wrap around the array.                                     |
+| **Next Greater Node in Linked List** ([LeetCode 1019](https://leetcode.com/problems/next-greater-node-in-linked-list/)) | Linked List     | Same idea, but using a linked list instead of array.                                    |
+| **Daily Temperatures** ([LeetCode 739](https://leetcode.com/problems/daily-temperatures/))                              | Next Warmer Day | You're solving this one! Monotonic decreasing stack from right to left.                 |
+
+---
+
+### 📉 **Next Smaller Element Problems**
+
+| Problem Name                                                                                                      | Type         | Description                                                     |
+| ----------------------------------------------------------------------------------------------------------------- | ------------ | --------------------------------------------------------------- |
+| **Next Smaller Element** (variation, common on coding sites)                                                      | Custom       | Find next smaller element to the right of each array element.   |
+| **Largest Rectangle in Histogram** ([LeetCode 84](https://leetcode.com/problems/largest-rectangle-in-histogram/)) | Stack Trick  | Use next smaller to left/right to calculate area of rectangles. |
+| **Sum of Subarray Minimums** ([LeetCode 907](https://leetcode.com/problems/sum-of-subarray-minimums/))            | Subarray Min | Uses monotonic stack to compute contributions of each element.  |
+
+---
+
+### 📦 **Stock Span / Span-based Problems**
+
+| Problem Name                                                                               | Type             | Description                                                                       |
+| ------------------------------------------------------------------------------------------ | ---------------- | --------------------------------------------------------------------------------- |
+| **Online Stock Span** ([LeetCode 901](https://leetcode.com/problems/online-stock-span/))   | Stack Span       | Compute number of consecutive days before today where stock was <= today's price. |
+| **Asteroid Collision** ([LeetCode 735](https://leetcode.com/problems/asteroid-collision/)) | Stack Simulation | Simulate collisions — decreasing stack pattern helps here.                        |
+
+---
+
+### 🔁 **Pattern Summary: Monotonic Stack Use Cases**
+
+| Goal                         | Stack Type                                         |
+| ---------------------------- | -------------------------------------------------- |
+| **Next Greater**             | Monotonic decreasing stack                         |
+| **Next Smaller**             | Monotonic increasing stack                         |
+| **Previous Greater/Smaller** | Same, but iterate left to right                    |
+| **Span problems**            | Stack of indices, comparing current with stack top |
+
+---
+
+Let me know if you'd like problems grouped by difficulty or with links to practice sets!
+
