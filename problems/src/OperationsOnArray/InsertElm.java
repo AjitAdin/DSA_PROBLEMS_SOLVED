@@ -30,3 +30,19 @@ public class InsertElm {
 			System.out.println("index:"+i+" "+arr[i]+": ");	}
 	}
 }
+
+
+
+
+// py
+before = [5, 10, 20]
+
+# Insert 16 at index 1
+after = before[:]  # make a copy
+after.insert(1, 16)
+
+# keep the same length as before
+after = after[:]
+
+print("Before:", before)
+print("After :", after)
