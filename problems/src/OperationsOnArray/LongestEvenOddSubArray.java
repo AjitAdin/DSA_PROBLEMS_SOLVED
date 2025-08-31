@@ -1,6 +1,6 @@
 
 // 2760. Longest Even Odd Subarray With Threshold
-
+//alternate even or odd
 
 
 package OperationsOnArray;
@@ -28,46 +28,7 @@ public class LongestEvenOddSubArray {
 //        }
 	        
 	        
-	        for(int i=0;i<(n-1);i++){
-	            count=1;
-	            for(int j=i;j<(n-1);j++){
-	                if((arr[j]%2)==0){
-	                    if((arr[j+1]%2)!=0){
-	                        count++;
-	                    }
-	                    else{
-	                        break;
-	                    }
-	                }
-	                else{
-	                  if((arr[j]%2)!=0){
-	                    if((arr[j+1]%2)==0){
-	                        count++;
-	                    }
-	                    else{
-	                        break;
-	                    }
-	                }   
-	                    
-	                }
-	                
-	                
-	               
-	            }
-	            if(pre<count){
-	                pre=count;
-	            }
-	        }
-	        System.out.println(pre);
-	    }
-	    
-	    public static void main(String args[]){
-	        //int arr[]={10,12,12,14,7,8,6,14,7,8,9};
-	        int arr[]={1,2,3,4,5,6,8,9};
-	        int n=arr.length;
-	        meth(arr,n);
-	    }
-}
+
 
 
 //EFFICIENT ALGORITHM
@@ -103,3 +64,39 @@ public class LongestEvenOddSubArray {
         findLongestEvenOddSubarray(arr, n);
     }
 }
+
+
+//effi
+def longest_alternating_even_odd(arr):
+    n = len(arr)
+    if n == 0:
+        return 0, []
+
+    max_len = 1
+    curr_len = 1
+    start = 0
+    max_start = 0
+
+    for j in range(n - 1):
+        if (arr[j] % 2 == 0 and arr[j + 1] % 2 != 0) or (arr[j] % 2 != 0 and arr[j + 1] % 2 == 0):
+            curr_len += 1
+        else:
+            if curr_len > max_len:
+                max_len = curr_len
+                max_start = start
+            curr_len = 1
+            start = j + 1  # reset start index
+    
+    # Final check in case the longest subarray is at the end
+    if curr_len > max_len:
+        max_len = curr_len
+        max_start = start
+
+    return max_len, arr[max_start:max_start + max_len]
+
+
+# Example usage:
+arr = [5, 10, 20, 6, 3, 8]
+length, subarray = longest_alternating_even_odd(arr)
+print("Length:", length)      # 3
+print("Subarray:", subarray)  # [6, 3, 8]
