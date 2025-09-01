@@ -67,6 +67,18 @@ public static void main(String args[]) {
 }
 
 
+arr = [10, -3, -4, 7, 6, 5, -4, -1]
+
+res = arr[0]
+for i in range(len(arr)):
+    currsum = arr[i]
+    currmax = arr[i]
+    for j in range(1, len(arr)):
+        currsum += arr[(i + j) % len(arr)]
+        currmax = max(currmax, currsum)
+    res = max(currmax, res)
+
+print(res)
 
 
 
