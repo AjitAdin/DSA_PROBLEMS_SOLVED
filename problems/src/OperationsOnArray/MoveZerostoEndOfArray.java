@@ -44,17 +44,23 @@ public class MoveZerostoEndOfArray {
 }
 
 
-class Solution:
-    def moveZeroes(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        index=0
-        for i in range(len(nums)):
-            if nums[i]==0:
-                continue
-            else:
-                nums[index]=nums[i]
-                index+=1
-        for j in range(index,len(nums)):
-            nums[j]=0
+def move_zeros_end(arr):
+    n = len(arr)
+    pos = 0  # position to place the next non-zero
+    
+    # Move non-zeros forward
+    for i in range(n):
+        if arr[i] != 0:
+            arr[pos] = arr[i]
+            pos += 1
+    
+    # Fill the rest with zeros
+    while pos < n:
+        arr[pos] = 0
+        pos += 1
+    
+    return arr
+
+arr = [0, 1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0]
+print(move_zeros_end(arr))
+
