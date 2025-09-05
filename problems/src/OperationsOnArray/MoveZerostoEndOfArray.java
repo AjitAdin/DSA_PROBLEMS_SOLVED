@@ -64,3 +64,21 @@ def move_zeros_end(arr):
 arr = [0, 1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0]
 print(move_zeros_end(arr))
 
+
+
+	// TWO POINTER APPROACH 
+	from typing import List
+
+class Solution:
+    @staticmethod
+    def moveZeroes(nums: List[int]) -> None: // not take a self because it is static method
+        left = 0
+        for right in range(len(nums)):
+            if nums[right] != 0:
+                nums[left], nums[right] = nums[right], nums[left]
+                left += 1
+
+nums = [0, 1, 9, 8, 4, 0, 2]
+Solution.moveZeroes(nums)   # call directly on the class
+print(nums)   # ✅ [1, 9, 8, 4, 2, 0, 0]
+
