@@ -42,3 +42,16 @@ class CountofElementsGreaterThanAllPriorElements {
 //        System.out.println(countGreaterElements(arr)); // Output: 4
 //    }
 //}
+
+
+arr = [7, 4, 8, 2, 9]
+
+count = 0
+max_so_far = float('-inf')
+
+for num in arr:
+    if num > max_so_far:
+        count += 1
+        max_so_far = num
+
+print(count)  # Output: 3
