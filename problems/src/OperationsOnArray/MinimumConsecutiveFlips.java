@@ -113,3 +113,15 @@ public class MinimumConsecutiveFlips {
 //    }
 //}
 
+arr = [1, 0, 0, 0, 1, 0, 0, 1, 0, 1]
+
+i = 0
+while i < len(arr):
+    if arr[i] == 0:
+        start = i
+        while i < len(arr) and arr[i] == 0:  # check bounds first
+            i += 1
+        end = i - 1
+        print("From", start, "to", end)
+    else:
+        i += 1

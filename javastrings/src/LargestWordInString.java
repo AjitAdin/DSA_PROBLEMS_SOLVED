@@ -68,3 +68,8 @@ public class LargestWordInString {
         System.out.println(largestWord(str));
     }
 }
+//
+
+s="ajit satish adin"
+print(len(max(s.split(), key=len)))
+print((max(s.split(), key=len)))

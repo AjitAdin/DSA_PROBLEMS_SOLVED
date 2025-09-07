@@ -71,3 +71,19 @@ class Main {
         System.out.println(sb.toString());
     }
 }
+
+
+
+s1="abcdef"
+s2="cefz"
+# abd
+
+res=[]
+
+for i in s1:
+    if i in s2:
+        continue
+    res.append(i)
+print(''.join(res))
+    
+        

@@ -42,3 +42,43 @@ public class MoveZerostoEndOfArray {
 	   display(arr,n);
    }
 }
+
+
+def move_zeros_end(arr):
+    n = len(arr)
+    pos = 0  # position to place the next non-zero
+    
+    # Move non-zeros forward
+    for i in range(n):
+        if arr[i] != 0:
+            arr[pos] = arr[i]
+            pos += 1
+    
+    # Fill the rest with zeros
+    while pos < n:
+        arr[pos] = 0
+        pos += 1
+    
+    return arr
+
+arr = [0, 1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0]
+print(move_zeros_end(arr))
+
+
+
+	// TWO POINTER APPROACH 
+	from typing import List
+
+class Solution:
+    @staticmethod
+    def moveZeroes(nums: List[int]) -> None: // not take a self because it is static method
+        left = 0
+        for right in range(len(nums)):
+            if nums[right] != 0:
+                nums[left], nums[right] = nums[right], nums[left]
+                left += 1
+
+nums = [0, 1, 9, 8, 4, 0, 2]
+Solution.moveZeroes(nums)   # call directly on the class
+print(nums)   # ✅ [1, 9, 8, 4, 2, 0, 0]
+

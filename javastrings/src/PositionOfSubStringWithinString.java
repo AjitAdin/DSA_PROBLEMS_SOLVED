@@ -103,3 +103,21 @@ public class PositionOfSubStringWithinString {
 //        System.out.println(result);
 //    }
 //}
+
+
+str = "takeuforward"
+substr = "forward"
+res = -1
+
+for i in range(len(str) - len(substr) + 1):  # +1 ensures last index is checked
+    index = 0
+    for j in range(i, i + len(substr)):
+        if str[j] == substr[index]:
+            index += 1
+        else:
+            break
+    
+    if index == len(substr):  # if all characters matched
+        res = i
+        break
+print(res)  # 👉 5
