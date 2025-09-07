@@ -54,3 +54,15 @@ print(fun(nums, target))   # [1, 3]
 
 target = 100
 print(fun(nums, target))   # []
+
+
+
+
+    // o(n)
+    def twoSum(nums, target):
+    lookup = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in lookup:
+            return [lookup[complement], i]
+        lookup[num] = i
