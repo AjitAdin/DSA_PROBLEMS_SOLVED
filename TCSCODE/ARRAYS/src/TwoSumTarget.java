@@ -66,3 +66,26 @@ print(fun(nums, target))   # []
         if complement in lookup:
             return [lookup[complement], i]
         lookup[num] = i
+
+// two pointer approach
+        def fun(nums, target):
+   
+   l,r=0,len(nums)-1
+   
+   while(l<r):
+       total=nums[l]+nums[r]
+       if total==target:
+           return [l,r]
+       elif(total<target):
+           l+=1
+       else:
+           r-=1
+   return []   
+            
+    
+    
+
+nums = [2,5,6,8,11]
+target = 146
+print(fun(nums, target))  # Output: (1, 3)
+
