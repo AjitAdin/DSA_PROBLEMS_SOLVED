@@ -62,3 +62,18 @@ public class SortCharctersInString{
 //         System.out.println(new String(chararr));  // Just print the sorted string
 //     }
 // }
+
+
+
+s="ajitsatish"
+
+new_s=list(s)
+new_s.sort()
+
+print("".join(new_s))
+
+
+# m2
+s = "ajitsatish"
+new_s = "".join(sorted(s))
+print(new_s)
