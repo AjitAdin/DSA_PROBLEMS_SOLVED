@@ -30,3 +30,19 @@ class SortArrayBasedonRiskLevels {
 
 
 //3rd method  Dutch National Flag Algorithm
+// 
+arr = [0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1]
+
+count = [0] * 3
+for i in arr:
+    count[i] += 1
+
+# Rebuild arr in sorted (low → medium → high risk) order
+index = 0
+for risk_level in range(3):        # 0 → low, 1 → medium, 2 → high
+    for _ in range(count[risk_level]):
+        arr[index] = risk_level
+        index += 1
+
+print(arr)
+
