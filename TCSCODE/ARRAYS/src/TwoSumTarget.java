@@ -39,3 +39,18 @@ class Solution:
             for j in range(i+1,len(nums)):
                 if nums[i]+nums[j]==target:
                     return [i,j]
+def fun(nums, target):
+    hash = {}
+    for i in range(len(nums)):
+        complement = target - nums[i]
+        if complement in hash:
+            return [hash[complement], i]
+        hash[nums[i]] = i
+    return []   # return empty list if no solution is found
+
+nums = [2, 7, 11, 15]
+target = 22
+print(fun(nums, target))   # [1, 3]
+
+target = 100
+print(fun(nums, target))   # []
