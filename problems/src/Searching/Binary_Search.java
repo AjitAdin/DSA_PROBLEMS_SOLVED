@@ -53,3 +53,43 @@ public class Binary_Search {
 //        System.out.println("Element found at index: " + result);
 //    }
 //}
+
+
+
+arr = [2, 4, 6, 8, 10, 12, 14]
+target = 10
+
+l, r = 0, len(arr) - 1  # use len(arr)-1
+
+while l <= r:
+    mid = (l + r) // 2
+    if arr[mid] == target:
+        print(mid)  # prints index of target
+        break
+    elif arr[mid] < target:
+        l = mid + 1
+    else:
+        r = mid - 1
+
+
+
+// RECUURSSIVE
+    def binary_search(arr, target, l, r):
+    if l > r:  # base case: not found
+        return -1
+    
+    mid = (l + r) // 2
+    
+    if arr[mid] == target:
+        return mid
+    elif arr[mid] < target:
+        return binary_search(arr, target, mid + 1, r)
+    else:
+        return binary_search(arr, target, l, mid - 1)
+
+
+arr = [2, 4, 6, 8, 10, 12, 14]
+target = 10
+print(binary_search(arr, target, 0, len(arr) - 1))  # prints 4
+
+print(binary_search(arr, 5, 0, len(arr) - 1))  # prints -1 (not found)
