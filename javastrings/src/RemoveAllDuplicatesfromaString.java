@@ -116,3 +116,20 @@ class Main {
 }
 
 
+s="cbacdcbc"
+seen=set()
+new_s=[]
+
+for i in s:
+     if i not in seen:
+         seen.add(i)
+         new_s.append(i)
+
+
+print("".join(new_s))
+
+
+//see another question i e leetcode 316 vimp
+
+
+
