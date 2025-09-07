@@ -104,3 +104,30 @@ class Main {
         System.out.println(result);
     }
 }
+
+// using hash
+def find_freq(s):
+    freq = {}
+    max_freq = 0
+    for ch in s:
+        freq[ch] = freq.get(ch, 0) + 1
+        if freq[ch] > max_freq:
+            max_freq = freq[ch]
+    return max_freq
+
+def high(s):
+    words = s.split()
+    highfreq = 0
+    word = None
+    for w in words:
+        freq = find_freq(w)
+        if highfreq < freq:
+            highfreq = freq
+            word = w
+    return word if highfreq>1 else -1
+
+
+# Example
+s = "ajit google"
+print(high(s))   # → google
+
