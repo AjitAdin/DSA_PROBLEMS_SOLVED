@@ -59,3 +59,28 @@ class Main {
         System.out.println(joined);  
     }
 }
+
+
+s="   hello   ajit  how are   you   "
+
+s=s.split()
+s.reverse()
+print(" ".join(s))
+
+
+    s = "   hello   ajit  how are   you   "
+
+# Split string into words
+s = s.split()
+print(s)  # ['hello', 'ajit', 'how', 'are', 'you']
+
+# Initialize pointers
+l, r = 0, len(s) - 1
+
+# Swap words
+while l < r:
+    s[l], s[r] = s[r], s[l]
+    l += 1
+    r -= 1
+
+print(s)  # ['you', 'are', 'how', 'ajit', 'hello']
