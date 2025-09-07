@@ -89,4 +89,20 @@ class Main {
 }
 
 
+s = "abcdxyzABCXYZ0123456789"
+new_s = []
+
+for i in s:
+    if 'a' <= i <= 'z':  # lowercase letters
+        new_s.append(chr((ord(i) - ord('a') + 1) % 26 + ord('a')))
+    elif 'A' <= i <= 'Z':  # uppercase letters
+        new_s.append(chr((ord(i) - ord('A') + 1) % 26 + ord('A')))
+    elif '0' <= i <= '9':  # digits
+        new_s.append(chr((ord(i) - ord('0') + 1) % 10 + ord('0')))
+    else:
+        new_s.append(i)  # leave other characters unchanged
+
+print("".join(new_s))
+
+
 
