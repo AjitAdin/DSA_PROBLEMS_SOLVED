@@ -56,3 +56,31 @@ class LongestSubarraySum {
 //
 //    }
 //}
+
+
+
+
+
+arr = [2, 5, 1, 7, 10]
+k = 14
+
+Max_len = 0
+l, r = 0, 0
+s, e = 0, 0
+curr_sum = 0
+
+while r < len(arr):
+    curr_sum += arr[r]
+
+    while curr_sum > k and l <= r:
+        curr_sum -= arr[l]
+        l += 1
+
+    if curr_sum <= k and Max_len < r - l + 1:
+        Max_len = r - l + 1
+        s, e = l, r + 1   # r+1 because Python slicing is end-exclusive
+
+    r += 1
+
+print("Subarray:", arr[s:e])
+print("Maximum Length:", Max_len)
