@@ -72,3 +72,32 @@ public class MaximumSumSubArray {
 //        System.out.println("Max sum of subarray of size " + k + ": " + maxSumSubarray(nums, k));
 //    }
 //}
+
+
+
+
+curr_sum = sum(arr[:k])
+Max = curr_sum
+
+l, r = 0, k
+while r < len(arr):
+    curr_sum -= arr[l]      # remove leftmost
+    curr_sum += arr[r]      # add new element
+    Max = max(Max, curr_sum)
+    l += 1
+    r += 1
+
+
+
+
+    Max = float('-inf')
+curr_sum = 0
+l, r = 0, 0
+
+while r < len(arr):
+    curr_sum += arr[r]
+    if (r - l + 1) == k:
+        Max = max(Max, curr_sum)
+        curr_sum -= arr[l]  # shrink from left
+        l += 1
+    r += 1
