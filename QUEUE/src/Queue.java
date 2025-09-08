@@ -1,63 +1,104 @@
-public class QueueOperations{
+// Queue implementation using array
+public class Queue {
+    private int[] arr;      // Array to store queue elements
+    private int front;      // Points to front element
+    private int rear;       // Points to last element
+    private int capacity;   // Maximum capacity of the queue
+    private int count;      // Current size of the queue
 
-    int[] Queue=new int[5];
-    int front=-1,rear=-1;
+    // Constructor to initialize queue
+    public Queue(int size) {
+        arr = new int[size];
+        capacity = size;
+        front = 0;
+        rear = -1;
+        count = 0;
+    }
 
-    public void enqueue(int item){
-        if(front==-1){
-            front=0;
-        }
-        if(rear==Queue.length-1){
-
-            System.out.println("Full");
+    // Add element to queue (Enqueue)
+    public void enqueue(int item) {
+        if (isFull()) {
+            System.out.println("Queue Overflow! Cannot insert " + item);
             return;
         }
-        else{
-            Queue[++rear]=item;
-            System.out.println("Added->"+item);
-        }
+        rear = (rear + 1) % capacity; // Circular increment
+        arr[rear] = item;
+        count++;
+        System.out.println("Inserted " + item);
     }
-    public void dequeue(){
-        if(front==-1||front>rear){
 
+    // Remove element from queue (Dequeue)
+    public void dequeue() {
+        if (isEmpty()) {
+            System.out.println("Queue Underflow! No element to remove");
+            return;
+        }
+        System.out.println("Removed " + arr[front]);
+        front = (front + 1) % capacity; // Circular increment
+        count--;
+    }
+
+    // Get front element
+    public int peek() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Queue is empty!");
+        }
+        return arr[front];
+    }
+
+    // Return size of queue
+    public int size() {
+        return count;
+    }
+
+    // Check if queue is empty
+    public boolean isEmpty() {
+        return (count == 0);
+    }
+
+    // Check if queue is full
+    public boolean isFull() {
+        return (count == capacity);
+    }
+
+    // Display queue elements
+    public void display() {
+        if (isEmpty()) {
             System.out.println("Queue is empty");
             return;
         }
-        else{
-            System.out.println("Deleted ->"+Queue[front]);
-            front++;
-        }
-    }
-    public void display(){
-        if(front==-1||front>rear){
-            System.out.println("Queue is empty");
-            return;
-        }
-        for(int i=front;i<=rear;i++){
-            System.out.print(Queue[i]+"->");
+        System.out.print("Queue elements: ");
+        for (int i = 0; i < count; i++) {
+            System.out.print(arr[(front + i) % capacity] + " ");
         }
         System.out.println();
     }
 
+    // Main method to test the queue
+    public static void main(String[] args) {
+        Queue q = new Queue(5);
 
-    public static void main(String args[]){
-        QueueOperations obj=new QueueOperations();
-        obj.display();
-        obj.enqueue(5);
-        obj.enqueue(3);
-        obj.enqueue(7);
-        obj.display();
-        obj.dequeue();
-        obj.display();
-        obj.enqueue(9);
-        obj.enqueue(6);
-        obj.enqueue(1);
-        obj.display();
-        obj.dequeue();
-        obj.display();
+        q.enqueue(10);
+        q.enqueue(20);
+        q.enqueue(30);
+        q.enqueue(40);
 
+        q.display();
+
+        q.dequeue();
+        q.display();
+
+        System.out.println("Front element: " + q.peek());
+        System.out.println("Queue size: " + q.size());
+
+        q.enqueue(50);
+        q.enqueue(60);
+        q.display();
+
+        q.enqueue(70); // Should show overflow
     }
 }
+
 
 
 //see this also

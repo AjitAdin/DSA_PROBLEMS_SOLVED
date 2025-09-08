@@ -1,4 +1,81 @@
+import java.util.*;
+
 public class InvadeEnemy {
+
+    public static void Invade(String[][] q, boolean[][] invaded) {
+        Queue<int[]> queue = new LinkedList<>();
+        int n = q.length;
+        int m = q[0].length;
+
+        // Add all 'A' cells as starting points
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (q[i][j].equals("A")) {
+                    queue.add(new int[]{i, j});
+                    invaded[i][j] = true;
+                }
+            }
+        }
+
+        int second = 0;
+        int[] drow = {-1, 1, 0, 0};
+        int[] dcol = {0, 0, -1, 1};
+
+        while (!queue.isEmpty()) {
+            int size = queue.size(); // all nodes at current time level
+
+            for (int s = 0; s < size; s++) {
+                int[] curr = queue.poll();
+                int r = curr[0];
+                int c = curr[1];
+
+                for (int k = 0; k < 4; k++) {
+                    int nrow = r + drow[k];
+                    int ncol = c + dcol[k];
+
+                    if (nrow >= 0 && nrow < n && ncol >= 0 && ncol < m
+                            && !invaded[nrow][ncol]
+                            && q[nrow][ncol].equals("E")) {
+                        queue.add(new int[]{nrow, ncol});
+                        invaded[nrow][ncol] = true;
+                        q[nrow][ncol] = "A"; // mark invaded
+                    }
+                }
+            }
+
+            // Only increase time if queue is not empty (means next layer exists)
+            if (!queue.isEmpty()) {
+                second++;
+            }
+        }
+
+        // Check if any 'E' remains
+        for (int I = 0; I < n; I++) {
+            for (int J = 0; J < m; J++) {
+                if (q[I][J].equals("E")) {
+                    System.out.println("-1");
+                    return;
+                }
+            }
+        }
+
+        System.out.println(second);
+    }
+
+    public static void main(String[] args) {
+        // Hardcoded input
+        String[][] q = {
+                {"A", "E"},
+                {"*", "*"},
+                {"E", "E"}
+        };
+
+        int N = q.length;
+        int M = q[0].length;
+        boolean[][] invaded = new boolean[N][M];
+
+        Invade(q, invaded);
+    }
 }
 
 
