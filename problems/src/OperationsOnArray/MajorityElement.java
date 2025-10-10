@@ -144,23 +144,61 @@ public class MajorityElementOptimized {
 }
 
 
-arr = [3,3,4,2,4,4,2,4,4]
+nums = [1, 1, 2, 3, 4]
+# candidate = 4
+# count = nums.count(4) = 1 → not > 2 → No majority
 
-# Phase 1: Find candidate
-candidate = None
-count = 0
 
-for num in arr:
-    if count == 0:
-        candidate = num
-        count = 1
-    elif num == candidate:
-        count += 1
-    else:
-        count -= 1
 
-# Phase 2: Verify candidate
-if arr.count(candidate) > len(arr) // 2:
-    print("Majority element:", candidate)
-else:
-    print("No majority element found")
+// arr = [3,3,4,2,4,4,2,4,4]
+
+// # Phase 1: Find candidate
+
+// candidate = None
+// count = 0
+
+// for num in arr:
+//     if count == 0:
+//         candidate = num
+//         count = 1
+//     elif num == candidate:
+//         count += 1
+//     else:
+//         count -= 1
+
+// # Phase 2: Verify candidate
+// if arr.count(candidate) > len(arr) // 2:
+//     print("Majority element:", candidate)
+// else:
+//     print("No majority element found")
+
+
+
+// 
+    // class Solution:
+    // def majorityElement(self, nums: List[int]) -> int:
+    //     from collections import Counter
+
+    //     counter_nums=Counter(nums)
+
+    //     for ele,count in counter_nums.items():
+    //         if count>(len(nums)//2):
+    //             return ele
+
+
+
+
+// # class Solution:
+// #     def majorityElement(self, nums: List[int]) -> int:
+// #         nums.sort()
+// #         return nums[len(nums) // 2]
+
+
+
+// # # 
+// #     d = {}
+// #         new_set = set(nums)
+// #         for num in new_set:
+// #             d.update({nums.count(num): num})
+        
+// #         return d[max(d)]

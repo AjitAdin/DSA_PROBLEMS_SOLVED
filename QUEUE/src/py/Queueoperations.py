@@ -77,3 +77,43 @@ q.enqueue(70)
 q.print_queue()
 
 print("Front element:", q.peek())
+
+
+
+# class Queue:
+    def __init__(self):
+        self.q = []
+
+    # Add element to the queue (rear side)
+    def enqueue(self, ele):
+        self.q.append(ele)
+        print(f"Enqueued: {ele}")
+
+    # Remove element from the queue (front side)
+    def dequeue(self):
+        if len(self.q) == 0:
+            print("Queue is empty! Cannot dequeue.")
+            return None
+        removed = self.q.pop(0)  # remove first element
+        print(f"Dequeued: {removed}")
+        return removed
+
+    # Print the current queue
+    def print_q(self):
+        if len(self.q) == 0:
+            print("Queue is empty.")
+        else:
+            print("Current Queue:", self.q)
+
+
+# Example usage
+obj = Queue()
+obj.enqueue(2)
+obj.enqueue(64)
+obj.enqueue(7)
+obj.enqueue(1)
+
+obj.print_q()   # Output: [2, 64, 7, 1]
+
+obj.dequeue()   # Removes 2
+obj.print_q()   # Output: [64, 7, 1]
