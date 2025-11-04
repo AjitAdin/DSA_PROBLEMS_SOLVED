@@ -84,5 +84,26 @@ print(res)
 
 
 
+def maximum_sum(arr):
+    n = len(arr)
+
+    # Step 1: Find total sum of the array
+    total_sum = sum(arr)
+
+    # Step 2: Find the minimum subarray sum using Kadane’s (for min)
+    pre = arr[0]
+    min_sum = arr[0]
+    for i in range(n):
+        cur = arr[i]
+        pre = min(cur, pre + cur)
+        min_sum = min(pre, min_sum)
+
+    # Step 3: Compute maximum circular subarray sum
+    print("The maximum sum is:", total_sum - min_sum)
+
+
+# Example
+arr = [8, -8, 9, -9, 10, -11, 12]  # Expected output: 22
+maximum_sum(arr)
 
 
