@@ -33,6 +33,20 @@ public class InsertElm {
 
 
 
+arr = [5, 10, 20, 6, 8, 9]
+ele = 6
+pos = 2  # index where to insert
+
+arr.append(0)  # make space at the end
+
+for i in range(len(arr) - 1, pos, -1):
+    arr[i] = arr[i - 1]
+arr[pos] = ele
+
+print(arr)
+
+
+
 
 // py
 before = [5, 10, 20]
