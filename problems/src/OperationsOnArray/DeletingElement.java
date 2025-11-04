@@ -72,3 +72,24 @@ public class DeletingElement {
 //        System.out.println("Updated List: " + list);
 //    }
 //}
+
+
+
+
+arr = [1, 2, 3, 4, 5]
+arr.remove(3)  # Removes the first occurrence of 3
+print(arr)  # Output: [1, 2, 4, 5]
+
+
+arr = [1, 2, 3, 4, 5]
+arr.pop(2)  # Removes the element at index 2 (third element)
+print(arr)  # Output: [1, 2, 4, 5]
+
+
+arr = [1, 2, 3, 4, 5]
+del arr[1]  # Deletes the element at index 1 (second element)
+print(arr)  # Output: [1, 3, 4, 5]
+
+arr = [1, 2, 3, 4, 5]
+arr = [x for x in arr if x != 3]  # Removes all occurrences of 3
+print(arr)  # Output: [1, 2, 4, 5]
