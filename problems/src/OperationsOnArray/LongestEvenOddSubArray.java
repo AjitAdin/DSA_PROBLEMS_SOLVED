@@ -66,37 +66,69 @@ public class LongestEvenOddSubArray {
 }
 
 
-//effi
-def longest_alternating_even_odd(arr):
-    n = len(arr)
-    if n == 0:
-        return 0, []
+// brute force approach
+		 arr=[5,10,20,6,3,8]
 
-    max_len = 1
-    curr_len = 1
-    start = 0
-    max_start = 0
-
-    for j in range(n - 1):
-        if (arr[j] % 2 == 0 and arr[j + 1] % 2 != 0) or (arr[j] % 2 != 0 and arr[j + 1] % 2 == 0):
-            curr_len += 1
+max_count=0
+for i in range(len(arr)):
+    count=1
+    for j in range(i+1,len(arr)):
+        if arr[j]%2==0 and arr[j-1]%2!=0:
+            count+=1
+        elif arr[j]%2!=0 and arr[j-1]%2==0:
+            count+=1
         else:
-            if curr_len > max_len:
-                max_len = curr_len
-                max_start = start
-            curr_len = 1
-            start = j + 1  # reset start index
+            break
+    max_count=max(max_count,count)
     
-    # Final check in case the longest subarray is at the end
-    if curr_len > max_len:
-        max_len = curr_len
-        max_start = start
-
-    return max_len, arr[max_start:max_start + max_len]
+print(max_count)
 
 
-# Example usage:
-arr = [5, 10, 20, 6, 3, 8]
-length, subarray = longest_alternating_even_odd(arr)
-print("Length:", length)      # 3
-print("Subarray:", subarray)  # [6, 3, 8]
+
+// optimal 
+	arr=[5,10,20,6,3,8,10]
+
+max_count=1
+
+count=1
+for j in range(1,len(arr)):
+    if arr[j]%2==0 and arr[j-1]%2!=0:
+            count+=1
+    elif arr[j]%2!=0 and arr[j-1]%2==0:
+            count+=1
+    else:
+        count=1
+    max_count=max(max_count,count)
+
+    
+print(max_count)
+		 
+
+	
+//also prints array 
+arr = [10, 12, 14, 7, 8, 9, 2, 3]
+
+
+
+max_count=1
+
+count=1
+start,end=0,0
+for j in range(1,len(arr)):
+    if arr[j]%2==0 and arr[j-1]%2!=0:
+            count+=1
+    elif arr[j]%2!=0 and arr[j-1]%2==0:
+            count+=1
+    else:
+        count=1
+        
+
+    if max_count<count:
+        start=j-count+1
+        end=j
+        max_count=count
+    
+
+    
+print(max_count)
+print(arr[start:end+1])
