@@ -28,3 +28,23 @@ public class LeftRotateArrayByOne {
     	 display(arr,n);
      }
 }
+
+
+arr = [1, 2, 3, 4, 5]
+temp=arr[0]
+
+for i in range(1,len(arr)):
+    arr[i-1]=arr[i]
+arr[len(arr)-1]=temp
+
+print(arr)
+
+// using slicing 
+arr = [1, 2, 3, 4, 5]
+arr = arr[1:] + arr[:1]
+print(arr)
+from collections import deque
+
+arr = deque([1, 2, 3, 4, 5])
+arr.rotate(-1)  # rotate left by 1
+print(list(arr))
