@@ -44,6 +44,21 @@ public class MoveZerostoEndOfArray {
 }
 
 
+// brute force approach
+arr=[7,0, 1, 9, 8, 4, 0, 2]
+
+
+for i in range(len(arr)):
+    
+    for j in range(len(arr)-1):
+        if arr[j]==0:
+            arr[j]=arr[j+1]
+            arr[j+1]=0
+print(arr)
+
+
+	// optimal approach
+
 def move_zeros_end(arr):
     n = len(arr)
     pos = 0  # position to place the next non-zero
