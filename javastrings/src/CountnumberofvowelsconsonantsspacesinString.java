@@ -61,3 +61,29 @@ for (int i = 0; i < str.length(); i++) {
 //Consonants: 11
 //White spaces: 4
 //Explanation:
+
+
+def count_vowels_consonants_spaces(s):
+    vowels = 0
+    consonants = 0
+    whitespaces = 0
+
+    for ch in s:
+        c = ch.lower()  # convert to lowercase for uniform checking
+
+        if c in 'aeiou':
+            vowels += 1
+        elif c == ' ':
+            whitespaces += 1
+        elif c.isalpha():
+            consonants += 1
+
+    print("Vowels:", vowels)
+    print("Consonants:", consonants)
+    print("Whitespaces:", whitespaces)
+
+
+# Example usage
+s = "Take u forward is Awesome"
+count_vowels_consonants_spaces(s)
+
