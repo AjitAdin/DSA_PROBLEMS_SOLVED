@@ -78,3 +78,40 @@ public class MaximumDifferenceProblemwithOrder {
 //	}
 //}
 
+// brute force approach
+arr = [10, 1, 20, 5]
+
+print(arr)
+max_diff = 0
+
+for i in range(len(arr)):
+    diff = 0
+    for j in range(i+1, len(arr)):
+        if arr[i] < arr[j]:
+            diff = arr[j] - arr[i]
+            max_diff = max(max_diff, diff)
+
+print(max_diff)
+
+
+
+	// optimal approach
+	def maximum_difference(nums):
+    if len(nums) < 2:
+        return -1
+    
+    min_val = nums[0]
+    max_diff = -1  # default if no valid pair exists
+
+    for i in range(1, len(nums)):
+        if nums[i] > min_val:  # valid pair
+            max_diff = max(max_diff, nums[i] - min_val)
+        else:  # update min_val if current is smaller
+            min_val = nums[i]
+
+    return max_diff
+
+# Test examples
+print(maximum_difference([7,1,5,4]))   # Output: 4
+print(maximum_difference([9,4,3,2]))   # Output: -1
+print(maximum_difference([1,5,2,10]))  # Output: 9
