@@ -39,3 +39,23 @@ class Main {
         System.out.println(count);
     }
 }
+
+//
+str = "                    HI    AMRMY  AND DEFENSE    hello"
+str = str.strip()
+print(str)
+
+count = 0
+i = 0
+
+while i < len(str):
+    if str[i] != " ":
+        count += 1
+        while i < len(str) and str[i] != " ":
+            i += 1
+    else:
+        i += 1
+
+print(count)
+
+    
