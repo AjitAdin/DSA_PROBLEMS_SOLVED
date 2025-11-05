@@ -171,3 +171,24 @@ print("Most frequent character:", res)
 s = "takeuforward"
 print("Maximum occurring character:", max_occurring_char(s))
 
+//  vimp
+    s = "takeuforward"
+
+# Only lowercase English letters → 26 possible chars
+freq = [0] * 26
+
+# Count frequencies
+for ch in s:
+    freq[ord(ch) - ord('a')] += 1
+
+# Find most frequent char
+max_count = 0
+max_char = ''
+for ch in s:
+    index = ord(ch) - ord('a')
+    if freq[index] > max_count:
+        max_count = freq[index]
+        max_char = ch
+
+print(max_char)
+print(max_count)
