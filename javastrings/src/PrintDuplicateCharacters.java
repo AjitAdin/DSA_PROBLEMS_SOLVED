@@ -84,3 +84,43 @@ class Main {
     }
 }
 
+
+// s="sinstriiintng"
+seen=set()
+for i in range(len(s)):
+    count=0
+    
+    if s[i] not in seen:
+        for j in range(len(s)):
+           if s[i]==s[j]:
+               count+=1
+    if s[i] not in seen:
+        seen.add(s[i])
+        if count>1:
+            print(f"{s[i]} - {count}")
+    
+    
+    
+
+
+    //
+    def print_duplicate_characters(s):
+    duplicates = []
+    length = len(s)
+
+    for i in range(length):
+        count = 1
+        # Skip if character already checked
+        if s[i] in duplicates:
+            continue
+        for j in range(i + 1, length):
+            if s[i] == s[j]:
+                count += 1
+        if count > 1:
+            duplicates.append(s[i])
+
+    print("Duplicate characters:")
+    for ch in duplicates:
+        print(ch, end=' ')
+
+
