@@ -111,4 +111,63 @@ class Main {
 }
 
 
+// hash approach
+s = "takeuforward"
+
+
+hash = {}
+
+# Count frequency of each character
+for i in s:
+    hash[i] = hash.get(i, 0) + 1
+
+# Find the max frequency
+max_freq = max(hash.values())
+
+
+
+# Find the first character in the string with that frequency
+for ch in s:
+    if hash[ch] == max_freq:
+        print("Most frequent character:", ch)
+        break
+
+
+
+// No need second loop
+    s = "takeuforward"
+
+hash = {}
+max_freq = 0
+res = ''
+
+for ch in s:
+    hash[ch] = hash.get(ch, 0) + 1
+    if hash[ch] > max_freq:
+        max_freq = hash[ch]
+        res = ch
+# no need for a second loop
+print("Most frequent character:", res)
+
+
+    // 
+    def max_occurring_char(s):
+    max_count = 0
+    max_char = ''
+    
+    for i in range(len(s)):
+        count = 0
+        for j in range(len(s)):
+            if s[i] == s[j]:
+                count += 1
+        if count > max_count:
+            max_count = count
+            max_char = s[i]
+    
+    return max_char
+
+
+# Example usage
+s = "takeuforward"
+print("Maximum occurring character:", max_occurring_char(s))
 
