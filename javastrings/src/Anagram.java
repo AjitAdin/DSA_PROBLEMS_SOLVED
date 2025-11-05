@@ -71,3 +71,12 @@ class Main {
     }
 }
 
+
+from collections import Counter
+
+str1 = "listEn"
+str2 = "silenT"
+
+print("yes" if Counter(str1.lower()) == Counter(str2.lower()) else "No")
+
+
