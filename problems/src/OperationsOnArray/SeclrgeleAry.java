@@ -103,3 +103,42 @@ public class SeclrgeleAry {
 //	}
 //}
 //
+
+
+def second_largest(arr):
+    # Check if array has at least 2 elements
+    if len(arr) < 2:
+        return None  # No second largest element
+
+    # Initialize first and second max
+    f_max = sec_max = float('-inf')  # Handles negative numbers too
+
+    for num in arr:
+        if num > f_max:
+            sec_max = f_max
+            f_max = num
+        elif num > sec_max and num != f_max:
+            sec_max = num
+
+    # If sec_max is still -inf, there is no second largest
+    if sec_max == float('-inf'):
+        return None
+    return sec_max
+
+# Test arrays
+test_arrays = [
+    [5, 20, 12, 20, 0],
+    [0, 20, 20, 20, 20],
+    [10, 10, 10, 10],
+    [1],
+    [-5, -1, -3, -1, -2],
+    [7, 7, 5, 6]
+]
+
+for arr in test_arrays:
+    result = second_largest(arr)
+    if result is None:
+        print(f"Array: {arr} → No second largest element")
+    else:
+        print(f"Array: {arr} → Second largest element: {result}")
+
