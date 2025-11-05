@@ -106,3 +106,10 @@ print("".join(new_s))
 
 
 
+    s = "abcdxyz"
+print(s)
+print("".join(chr(((ord(c.lower()) - 97 + 1) % 26) + 97) for c in s))
+
+
+
+
