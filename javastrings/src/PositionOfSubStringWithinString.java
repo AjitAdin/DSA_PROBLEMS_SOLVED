@@ -121,3 +121,18 @@ for i in range(len(str) - len(substr) + 1):  # +1 ensures last index is checked
         res = i
         break
 print(res)  # 👉 5
+
+
+    // using while loops
+    s = "takeuforward"
+sub_str = "forward"
+
+for i in range(len(s)):
+    index = 0
+    pos = i
+    while pos < len(s) and index < len(sub_str) and s[pos] == sub_str[index]:
+        index += 1
+        pos += 1
+    if index == len(sub_str):
+        print(i)
+
