@@ -112,16 +112,16 @@ public class MinimumConsecutiveFlips {
 //        a(arr, n);
 //    }
 //}
+arr = [0,0,0,1,1,1,0,1]
+n = len(arr)
+first = arr[0]
 
-arr = [1, 0, 0, 0, 1, 0, 0, 1, 0, 1]
-
-i = 0
-while i < len(arr):
-    if arr[i] == 0:
-        start = i
-        while i < len(arr) and arr[i] == 0:  # check bounds first
-            i += 1
-        end = i - 1
-        print("From", start, "to", end)
-    else:
-        i += 1
+for i in range(1, n):
+    if arr[i] != arr[i-1]:
+        if arr[i] != first:
+            print("From", i, "to", end=" ")
+        else:
+            print(i-1)
+# handle last group
+if arr[n-1] != first:
+    print(n-1)
